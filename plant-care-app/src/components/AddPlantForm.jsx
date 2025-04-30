@@ -21,6 +21,30 @@ const AddPlantForm = () => {
       <button type="submit">Add Plant</button>
     </form>
   );
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!name || !image) {
+      alert("Both name and image are required");
+      return;
+    }
+
+    const newPlant = {
+      id: Date.now(),
+      name: name,
+      image: image,
+    };
+
+    onAddPlant(newPlant);
+    setName('');
+    setImage('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* inputs og button som før */}
+    </form>
+  );
 };
 
 export default addPlantForm;
