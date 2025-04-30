@@ -26,6 +26,10 @@ const App = () => {
     }
   ]);
 
+  const handleAddPlant = (newPlant) => {
+    setPlants((prevPlants) => [...prevPlants, newPlant]);
+  };
+  
   return (
     <>
       <Header />
@@ -33,7 +37,7 @@ const App = () => {
         <SearchBar />
         <FilterSortBar />
         <PlantList plants={plants} />
-        <AddPlantForm />
+        <AddPlantForm onAddPlant={handleAddPlant} />
       </main>
       <Footer />
     </>
