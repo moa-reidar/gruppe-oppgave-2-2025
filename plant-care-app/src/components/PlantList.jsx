@@ -1,8 +1,17 @@
 import React from 'react';
+import PlantCard from './PlantCard'; // vi bruker denne til å vise én plante
 
-const PlantList = () => {
+const PlantList = ({ plants }) => {
   return (
-    <div>PlantList</div>
+    <section>
+      {plants.map((plant) => (
+        <PlantCard
+          key={plant.id}
+          name={plant.name}
+          image={plant.image}
+        />
+      ))}
+    </section>
   );
 };
 
