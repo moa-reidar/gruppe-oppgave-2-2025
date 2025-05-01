@@ -26,17 +26,27 @@ const App = () => {
     }
   ]);
 
+  const [searchTerm, setSearchTerm] = useState('');
+
   const handleAddPlant = (newPlant) => {
     setPlants((prevPlants) => [...prevPlants, newPlant]);
   };
-  
+
+  const handleSearchChange = (value) => {
+    setSearchTerm(value);
+  };
+
+  const filteredPlants = plants.filter((plant) =>
+    plant.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <Header />
       <main>
-        <SearchBar />
+        <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
         <FilterSortBar />
-        <PlantList plants={plants} />
+        <PlantList plants={filteredPlants} />
         <AddPlantForm onAddPlant={handleAddPlant} />
       </main>
       <Footer />
@@ -45,4 +55,3 @@ const App = () => {
 };
 
 export default App;
-
