@@ -130,7 +130,7 @@ const App = () => {
       toxicity: "Non-toxic",
     },
   ]);
-
+   
   const [searchTerm, setSearchTerm] = useState('');
   const [lightFilter, setLightFilter] = useState('All');
 
@@ -148,7 +148,7 @@ const App = () => {
 
   const filteredPlants = plants
     .filter((plant) =>
-      plant.name.toLowercase().includes(searchTerm.toLowerCase()) 
+      plant.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .filter((plant) =>
       lightFilter === 'All' ? true : plant.lightRequirement === lightFilter
@@ -161,7 +161,7 @@ const App = () => {
         <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
         <FilterSortBar
           lightFilter={lightFilter}
-          onLightChange={handleLightFilterChange} 
+          onLightFilterChange={handleLightFilterChange}
         />
         <PlantList plants={filteredPlants} />
         <AddPlantForm onAddPlant={handleAddPlant} />
