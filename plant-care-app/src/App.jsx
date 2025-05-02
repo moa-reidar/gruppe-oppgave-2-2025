@@ -132,6 +132,7 @@ const App = () => {
   ]);
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [lightFilter, setLightFilter] = useState('All');
 
   const handleAddPlant = (newPlant) => {
     setPlants((prevPlants) => [...prevPlants, newPlant]);
@@ -141,16 +142,27 @@ const App = () => {
     setSearchTerm(value);
   };
 
-  const filteredPlants = plants.filter((plant) =>
-    plant.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleLightFilterChange = (value) => {
+    setLightFilter(value);
+  };
+
+  const filteredPlants = plants
+    .filter((plant) =>
+      plant.name.toLowercase().includes(searchTerm.toLowerCase()) 
+    )
+    .filter((plant) =>
+      lightFilter === 'All' ? true : plant.lightRequirement === lightFilter
+    );
 
   return (
     <>
       <Header />
       <main>
         <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
-        <FilterSortBar />
+        <FilterSortBar
+          lightFilter={lightFilter}
+          onLightChange={handleLightFilterChange} 
+        />
         <PlantList plants={filteredPlants} />
         <AddPlantForm onAddPlant={handleAddPlant} />
       </main>
@@ -160,4 +172,3 @@ const App = () => {
 };
 
 export default App;
-
