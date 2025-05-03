@@ -132,6 +132,11 @@ const App = () => {
   ]);
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [lightFilter, setLightFilter] = useState('All');
+  const [wateringFilter, setWateringFilter] = useState('All');
+  const [soilFilter, setSoilFilter] = useState('All');
+  const [humidityFilter, setHumidityFilter] = useState('All');
+  const [toxicityFilter, setToxicityFilter] = useState('All');
 
   const handleAddPlant = (newPlant) => {
     setPlants((prevPlants) => [...prevPlants, newPlant]);
@@ -141,16 +146,43 @@ const App = () => {
     setSearchTerm(value);
   };
 
-  const filteredPlants = plants.filter((plant) =>
-    plant.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredPlants = plants
+    .filter((plant) =>
+      plant.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .filter((plant) =>
+      lightFilter === 'All' ? true : plant.lightRequirement === lightFilter
+    )
+    .filter((plant) =>
+      wateringFilter === 'All' ? true : plant.wateringSchedule === wateringFilter
+    )
+    .filter((plant) =>
+      soilFilter === 'All' ? true : plant.soilType === soilFilter
+    )
+    .filter((plant) =>
+      humidityFilter === 'All' ? true : plant.humidity === humidityFilter
+    )
+    .filter((plant) =>
+      toxicityFilter === 'All' ? true : plant.toxicity === toxicityFilter
+    );
 
   return (
     <>
       <Header />
       <main>
         <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
-        <FilterSortBar />
+        <FilterSortBar
+          lightFilter={lightFilter}
+          onLightFilterChange={setLightFilter}
+          wateringFilter={wateringFilter}
+          onWateringFilterChange={setWateringFilter}
+          soilFilter={soilFilter}
+          onSoilFilterChange={setSoilFilter}
+          humidityFilter={humidityFilter}
+          onHumidityFilterChange={setHumidityFilter}
+          toxicityFilter={toxicityFilter}
+          onToxicityFilterChange={setToxicityFilter}
+        />
         <PlantList plants={filteredPlants} />
         <AddPlantForm onAddPlant={handleAddPlant} />
       </main>
