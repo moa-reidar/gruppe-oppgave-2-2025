@@ -163,7 +163,7 @@ const App = () => {
       humidityFilter === 'All' ? true : plant.humidity === humidityFilter
     )
     .filter((plant) =>
-      toxicityFilter === 'All' ? true : plant.toxicty === toxicityFilter
+      toxicityFilter === 'All' ? true : plant.toxicity === toxicityFilter
     );
 
   return (
@@ -179,7 +179,7 @@ const App = () => {
           soilFilter={soilFilter}
           onSoilFilterChange={setSoilFilter}
           humidityFilter={humidityFilter}
-          onHumidityfilterChange={setHumidityFilter}
+          onHumidityFilterChange={setHumidityFilter}
           toxicityFilter={toxicityFilter}
           onToxicityFilterChange={setToxicityFilter}
         />
@@ -192,3 +192,4 @@ const App = () => {
 };
 
 export default App;
+
