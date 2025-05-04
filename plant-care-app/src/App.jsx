@@ -137,7 +137,7 @@ const App = () => {
   const [soilFilter, setSoilFilter] = useState('All');
   const [humidityFilter, setHumidityFilter] = useState('All');
   const [toxicityFilter, setToxicityFilter] = useState('All');
-  const [sortOrder, setSortOrder] = useState('asc'); 
+  const [sortOrder, setSortOrder] = useState('asc');
 
   const handleAddPlant = (newPlant) => {
     setPlants((prevPlants) => [...prevPlants, newPlant]);
@@ -188,6 +188,7 @@ const App = () => {
           onHumidityFilterChange={setHumidityFilter}
           toxicityFilter={toxicityFilter}
           onToxicityFilterChange={setToxicityFilter}
+          sortOrder={sortOrder}
           onSortOrderChange={setSortOrder}
         />
         <PlantList plants={filteredPlants} />
