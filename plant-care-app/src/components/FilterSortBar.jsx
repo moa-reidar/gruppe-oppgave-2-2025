@@ -11,6 +11,8 @@ const FilterSortBar = ({
   onHumidityFilterChange,
   toxicityFilter,
   onToxicityFilterChange,
+  sortOrder,
+  onSortOrderChange,
 }) => {
   return (
     <section>
@@ -62,6 +64,12 @@ const FilterSortBar = ({
         <option value="Toxic to pets">Toxic to pets</option>
         <option value="Mildly toxic">Mildly toxic</option>
         <option value="Non-toxic">Non-toxic</option>
+      </select>
+
+      <label>Sort by Name:</label>
+      <select value={sortOrder} onChange={(e) => onSortOrderChange(e.target.value)}>
+        <option value="asc">A–Z</option>
+        <option value="desc">Z–A</option>
       </select>
     </section>
   );
