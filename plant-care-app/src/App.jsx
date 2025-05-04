@@ -137,9 +137,7 @@ const App = () => {
   const [soilFilter, setSoilFilter] = useState('All');
   const [humidityFilter, setHumidityFilter] = useState('All');
   const [toxicityFilter, setToxicityFilter] = useState('All');
-
-  
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortOrder, setSortOrder] = useState('asc'); 
 
   const handleAddPlant = (newPlant) => {
     setPlants((prevPlants) => [...prevPlants, newPlant]);
@@ -167,7 +165,12 @@ const App = () => {
     )
     .filter((plant) =>
       toxicityFilter === 'All' ? true : plant.toxicity === toxicityFilter
-    );
+    )
+    .sort((a, b) => {
+      return sortOrder === 'asc'
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name);
+    });
 
   return (
     <>
@@ -185,6 +188,7 @@ const App = () => {
           onHumidityFilterChange={setHumidityFilter}
           toxicityFilter={toxicityFilter}
           onToxicityFilterChange={setToxicityFilter}
+          onSortOrderChange={setSortOrder}
         />
         <PlantList plants={filteredPlants} />
         <AddPlantForm onAddPlant={handleAddPlant} />
