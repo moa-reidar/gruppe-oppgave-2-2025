@@ -7,13 +7,24 @@ import FilterSortBar from './components/FilterSortBar';
 import PlantList from './components/PlantList';
 import AddPlantForm from './components/AddPlantForm';
 
+import plant1 from './assets/image/plant 1.jpeg';
+import plant2 from './assets/image/plant 2.jpeg';
+import plant3 from './assets/image/plant 3.jpeg';
+import plant4 from './assets/image/plant 4.jpeg';
+import plant5 from './assets/image/plant 5.jpeg';
+import plant6 from './assets/image/plant 6.jpeg';
+import plant7 from './assets/image/plant 7.jpeg';
+import plant8 from './assets/image/plant 8.jpeg';
+import plant9 from './assets/image/plant 9.jpeg';
+import plant10 from './assets/image/plant 10.jpeg';
+
 const App = () => {
   const [plants, setPlants] = useState([
     {
       id: 1,
       name: "Snake Plant",
       scientificName: "Sansevieria trifasciata",
-      image: "https://via.placeholder.com/150",
+      image: plant1,
       wateringSchedule: "Every 2 weeks",
       lightRequirement: "Low",
       soilType: "Well-draining",
@@ -25,7 +36,7 @@ const App = () => {
       id: 2,
       name: "Monstera",
       scientificName: "Monstera deliciosa",
-      image: "https://via.placeholder.com/150",
+      image: plant2,
       wateringSchedule: "Once a week",
       lightRequirement: "Medium",
       soilType: "Peat-based",
@@ -37,7 +48,7 @@ const App = () => {
       id: 3,
       name: "Aloe Vera",
       scientificName: "Aloe barbadensis miller",
-      image: "https://via.placeholder.com/150",
+      image: plant3,
       wateringSchedule: "Every 3 weeks",
       lightRequirement: "High",
       soilType: "Sandy",
@@ -49,7 +60,7 @@ const App = () => {
       id: 4,
       name: "Peace Lily",
       scientificName: "Spathiphyllum wallisii",
-      image: "https://via.placeholder.com/150",
+      image: plant4,
       wateringSchedule: "Once a week",
       lightRequirement: "Low",
       soilType: "Loamy",
@@ -61,7 +72,7 @@ const App = () => {
       id: 5,
       name: "ZZ Plant",
       scientificName: "Zamioculcas zamiifolia",
-      image: "https://via.placeholder.com/150",
+      image: plant5,
       wateringSchedule: "Every 2-3 weeks",
       lightRequirement: "Low",
       soilType: "Well-draining",
@@ -73,7 +84,7 @@ const App = () => {
       id: 6,
       name: "Spider Plant",
       scientificName: "Chlorophytum comosum",
-      image: "https://via.placeholder.com/150",
+      image: plant6,
       wateringSchedule: "Twice a week",
       lightRequirement: "Medium",
       soilType: "Well-draining",
@@ -85,7 +96,7 @@ const App = () => {
       id: 7,
       name: "Rubber Plant",
       scientificName: "Ficus elastica",
-      image: "https://via.placeholder.com/150",
+      image: plant7,
       wateringSchedule: "Once a week",
       lightRequirement: "Bright indirect",
       soilType: "Loamy",
@@ -97,7 +108,7 @@ const App = () => {
       id: 8,
       name: "Pothos",
       scientificName: "Epipremnum aureum",
-      image: "https://via.placeholder.com/150",
+      image: plant8,
       wateringSchedule: "Every 1-2 weeks",
       lightRequirement: "Low to medium",
       soilType: "Well-draining",
@@ -109,7 +120,7 @@ const App = () => {
       id: 9,
       name: "Chinese Evergreen",
       scientificName: "Aglaonema",
-      image: "https://via.placeholder.com/150",
+      image: plant9,
       wateringSchedule: "Every 1-2 weeks",
       lightRequirement: "Low",
       soilType: "Peat-based",
@@ -121,7 +132,7 @@ const App = () => {
       id: 10,
       name: "Boston Fern",
       scientificName: "Nephrolepis exaltata",
-      image: "https://via.placeholder.com/150",
+      image: plant10,
       wateringSchedule: "Keep soil moist",
       lightRequirement: "Medium to bright indirect",
       soilType: "Rich, well-draining",
