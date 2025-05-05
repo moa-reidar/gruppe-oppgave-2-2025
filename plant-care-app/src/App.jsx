@@ -6,6 +6,7 @@ import SearchBar from './components/SearchBar';
 import FilterSortBar from './components/FilterSortBar';
 import PlantList from './components/PlantList';
 import AddPlantForm from './components/AddPlantForm';
+import PlantDetailModal from './components/PlantDetailModal';
 
 import plant1 from './assets/image/plant 1.jpeg';
 import plant2 from './assets/image/plant 2.jpeg';
@@ -148,6 +149,7 @@ const App = () => {
   const [soilFilter, setSoilFilter] = useState('All');
   const [humidityFilter, setHumidityFilter] = useState('All');
   const [toxicityFilter, setToxicityFilter] = useState('All');
+  const [selectedPlant, setSelectedPlant] = useState(null);
 
   const handleAddPlant = (newPlant) => {
     setPlants((prevPlants) => [...prevPlants, newPlant]);
@@ -155,6 +157,10 @@ const App = () => {
 
   const handleSearchChange = (value) => {
     setSearchTerm(value);
+  };
+
+  const handlePlantClick = (plant) => {
+    setSelectedPlant(plant);
   };
 
   const filteredPlants = plants
@@ -194,13 +200,20 @@ const App = () => {
           toxicityFilter={toxicityFilter}
           onToxicityFilterChange={setToxicityFilter}
         />
-        <PlantList plants={filteredPlants} />
+        <PlantList plants={filteredPlants} onPlantClick={handlePlantClick} />
         <AddPlantForm onAddPlant={handleAddPlant} />
       </main>
+
+      {selectedPlant && (
+        <PlantDetailModal
+          plant={selectedPlant}
+          onClose={() => setSelectedPlant(null)}
+        />
+      )}
+
       <Footer />
     </>
   );
 };
 
 export default App;
-
