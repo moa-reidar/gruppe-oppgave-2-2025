@@ -1,24 +1,22 @@
 import React from 'react';
 
-const PlantDetailModal = ({ plant, closeModal }) => {
-  if (plant === null) {
-    return;
-  }
+const PlantDetailModal = ({ plant, onClose }) => {
+  if (!plant) return null;
 
   return (
     <div className="modal">
       <div className="modal-content">
-        <button className="modal-close" onClick={onClose}>X</button>
+        <button className="modal-close" onClick={onClose}>Close</button>
         <h2>{plant.name}</h2>
-        <p><i>{plant.scientificName}</i></p>
-        <img src={plant.image} />
+        <p><em>{plant.scientificName}</em></p>
+        <img src={plant.image} alt={plant.name} />
         <ul>
-          <li><b>Water:</b> {plant.water}</li>
-          <li><b>Light:</b> {plant.light}</li>
-          <li><b>Soil:</b> {plant.soil}</li>
-          <li><b>Temp:</b> {plant.temp}</li>
-          <li><b>Humidity:</b> {plant.humidity}</li>
-          <li><b>Toxic?</b> {plant.toxic}</li>
+          <li><strong>Watering:</strong> {plant.wateringSchedule}</li>
+          <li><strong>Light:</strong> {plant.lightRequirement}</li>
+          <li><strong>Soil:</strong> {plant.soilType}</li>
+          <li><strong>Temperature:</strong> {plant.temperatureRange}</li>
+          <li><strong>Humidity:</strong> {plant.humidity}</li>
+          <li><strong>Toxicity:</strong> {plant.toxicity}</li>
         </ul>
       </div>
     </div>
@@ -26,3 +24,4 @@ const PlantDetailModal = ({ plant, closeModal }) => {
 };
 
 export default PlantDetailModal;
+
