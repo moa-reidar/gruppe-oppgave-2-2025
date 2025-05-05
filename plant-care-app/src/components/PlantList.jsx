@@ -1,7 +1,7 @@
 import React from 'react';
-import PlantCard from './PlantCard'; // vi bruker denne til å vise én plante
+import PlantCard from './PlantCard';
 
-const PlantList = ({ plants }) => {
+const PlantList = ({ plants, onPlantClick }) => {
   return (
     <section>
       {plants.map((plant) => (
@@ -9,6 +9,7 @@ const PlantList = ({ plants }) => {
           key={plant.id}
           name={plant.name}
           image={plant.image}
+          onClick={() => onPlantClick(plant)} // sender med hele planten
         />
       ))}
     </section>
