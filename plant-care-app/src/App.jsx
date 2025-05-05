@@ -17,6 +17,7 @@ import plant6 from './assets/image/plant 6.jpeg';
 import plant7 from './assets/image/plant 7.jpeg';
 import plant8 from './assets/image/plant 8.jpeg';
 import plant9 from './assets/image/plant 9.jpeg';
+
 import plant10 from './assets/image/plant 10.jpeg';
 
 const App = () => {
