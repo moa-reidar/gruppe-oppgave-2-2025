@@ -3,28 +3,31 @@ import React, { useState } from 'react';
 const AddPlantForm = ({ onAddPlant }) => {
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!name || !image) {
-      alert("Both name and image are required");
+      setError('Both name and image are required.');
       return;
     }
 
     const newPlant = {
       id: Date.now(),
-      name: name,
-      image: image,
+      name,
+      image,
     };
 
     onAddPlant(newPlant);
     setName('');
     setImage('');
+    setError('');
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <input
         type="text"
         placeholder="Plant Name"
