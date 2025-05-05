@@ -4,8 +4,8 @@ const PlantDetailModal = ({ plant, onClose }) => {
   if (!plant) return null;
 
   return (
-    <div className="modal">
-      <div className="modal-content">
+    <div className="modal" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>Close</button>
         <h2>{plant.name}</h2>
         <p><em>{plant.scientificName}</em></p>
@@ -24,4 +24,3 @@ const PlantDetailModal = ({ plant, onClose }) => {
 };
 
 export default PlantDetailModal;
-
