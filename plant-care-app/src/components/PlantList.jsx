@@ -9,7 +9,7 @@ const PlantList = ({ plants, onPlantClick }) => {
           key={plant.id}
           name={plant.name}
           image={plant.image}
-          onClick={() => onPlantClick(plant)} // sender med hele planten
+          onClick={() => onPlantClick(plant)} 
         />
       ))}
     </section>
