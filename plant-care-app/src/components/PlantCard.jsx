@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PlantCard = ({ name, image }) => {
+const PlantCard = ({ name, image, onClick }) => {
   return (
-    <div className="plant-card">
+    <div className="plant-card" onClick={onClick}>
       <h3>{name}</h3>
       <img src={image} alt={name} />
     </div>
@@ -10,4 +10,3 @@ const PlantCard = ({ name, image }) => {
 };
 
 export default PlantCard;
-
