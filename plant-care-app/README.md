@@ -18,5 +18,5 @@ Technologies
 * Vite
 * JSX
 * CSS (reset, root variables, and modular structure)
-* Git and GitHub (branch-based collaboration)
+* Git and GitHub (branch-based collaboration 
 
