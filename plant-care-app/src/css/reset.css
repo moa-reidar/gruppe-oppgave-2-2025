@@ -33,4 +33,17 @@
     max-width: 100%;
     height: auto;
   }
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  main, header, footer, section, form {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
   
