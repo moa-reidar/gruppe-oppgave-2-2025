@@ -20,3 +20,6 @@ Technologies
 * CSS (reset, root variables, and modular structure)
 * Git and GitHub (branch-based collaboration 
 
+
+github link: https://github.com/moa-reidar/gruppe-oppgave-2-2025.git
+
